@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <h1 class="logo">
+                    We are here
+                </h1>
+                <ul class="nav-links">
+                    <li id="work"><a href="#">Work</a></li>
+                    <li id="studios"><a href="#">Studios</a></li>
+                    <li id="recognition"><a href="#">Recognition</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>We combine sharp design with rich technology to craft exciting brands.</h1>
+                <p>52 neurons lost doing this ⚡️</p>
+            </div>
+        </section>
+
+        <section class="projects">
+            <h2>Latest Projects</h2>
+            <div class="container projects-grid">
+                <div class="project-item">
+                    <img src="https://img.freepik.com/premium-photo/sand-sculpture-with-sand-sculpture-it-is-beach_1222282-30006.jpg?w=740" alt="Sandclock">
+                    <h3>Sandclock</h3>
+                    <p>3D, Art design, UI/UX Design, Website</p>
+                </div>
+                <div class="project-item">
+                    <img src="https://img.freepik.com/premium-photo/dna-representation-collage_23-2150239213.jpg?w=1060" alt="Hematogenix">
+                    <h3>Hematogenix</h3>
+                    <p>3D, Art design, UI/UX Design, Website</p>
+                </div>
+                <div class="project-item">
+                    <img src="https://img.freepik.com/premium-photo/world-oceans-day-with-various-colorful-tropical-fish-corals-globe_1184677-978.jpg?w=1060" alt="Ketagora">
+                    <h3>Ketagora</h3>
+                    <p>3D, Art design, UI/UX Design, Website</p>
+                </div>
+                <div class="project-item">
+                    <img src="https://img.freepik.com/free-photo/businessman-interacting-with-futuristic-graphics_23-2151003719.jpg?t=st=1729159146~exp=1729162746~hmac=efc9ebe8db293cd63cb0a5771ef42110099c87a164d9635fbee8f0cddadd2d34&w=996" alt="Alts Digital">
+                    <h3>Alts Digital</h3>
+                    <p>3D, Art design, UI/UX Design, Website</p>
+                </div>
+                <div class="project-item">
+                    <img src="https://img.freepik.com/premium-photo/passenger-aircraft-midair_485374-22507.jpg?w=740" alt="Alts Digital">
+                    <h3>Hi Fly</h3>
+                    <p>3D, Art design, UI/UX Design, Website</p>
+                </div>
+                <div class="project-item">
+                    <img src="https://img.freepik.com/premium-vector/orange-black-uppercase-letter-u-icon-with-airplane-white-background_95164-14196.jpg?w=740" alt="Alts Digital">
+                    <h3>Utrust</h3>
+                    <p>3D, Art design, UI/UX Design, Website</p>
+                </div>
+            </div>
+        </section>
+        <h1>Design is not teuila</h1>
+        <h2>It can't make everyone happy</h2>
+    </main>
+
+    <script>
+        const originalContent = document.querySelector('main').innerHTML;
+        const originalLogoText = document.querySelector('.logo').innerHTML;
+
+        document.getElementById('studios').addEventListener('click', function(event) {
+            event.preventDefault();
+
+            document.querySelector('.logo').innerHTML = "a bunch of guys and two plants";
+
+            const studiosContent = `
+        <section class="studios-page">
+            <h1>Hi. Büro here.</h1>
+            <p>A branding and interactive award-winning agency with studios in Coimbra and Porto.</p>
+            <p>Designers, engineers and coders driven by exceptional design and craftsmanship.</p>
+            <p>We are digital specialists with our heart and soul on strategic branding.</p>
+            <p><strike>Blah, blah, blah.</strike></p>
+        </section>
+    `;
+
+            document.querySelector('main').innerHTML = studiosContent;
+
+            const style = document.createElement('style');
+            style.innerHTML = `
+        .studios-page {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0 auto;
+            padding: 50px;
+            background-color: #f9f9f9;
+            max-width: 900px;
+        }
+        
+        .studios-page h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .studios-page h1::after {
+            content: '';
+            width: 80px;
+            height: 2px;
+            background-color: black;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .studios-page p {
+            font-size: 1.5rem;
+            margin: 20px 0;
+            position: relative;
+            color: #000;
+        }
+        
+        .studios-page p strike {
+            display: inline-block;
+            position: relative;
+            color: #444;
+        }
+        
+        .studios-page p:before {
+            content: '';
+            width: 60px;
+            height: 2px;
+            background-color: black;
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: rotate(10deg);
+        }
+        
+        .studios-page p:after {
+            content: '✍️';
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            font-size: 1.5rem;
+        }
+    `;
+            document.head.appendChild(style);
+        });
+
+        document.getElementById('recognition').addEventListener('click', function(event) {
+            event.preventDefault();
+
+            document.querySelector('.logo').innerHTML = "5E if you read all this";
+
+            const recognitionContent = `
+        <section class="recognition-page">
+            <h1>We are a leading digital agency</h1>
+            <p>We believe that good work has a positive impact on your business.</p>
+            <p>Our work has been honoured with:</p>
+            <ul>
+                <li>34 Awwwards</li>
+                <li>26 European Design Awards</li>
+                <li>16 Lovies</li>
+                <li>4 Webbys</li>
+                <li>35 CCP's from Clube de Criativos de Portugal</li>
+            </ul>
+            <div class="image-container">
+                <img src="path-to-image.jpg" alt="Recognition Image" class="recognition-image">
+            </div>
+        </section>
+    `;
+
+            document.querySelector('main').innerHTML = recognitionContent;
+
+            const style = document.createElement('style');
+            style.innerHTML = `
+        .recognition-page {
+            font-family: 'Helvetica Neue', sans-serif;
+            padding: 40px;
+            background-color: #f2ebe3;
+            text-align: left;
+        }
+        
+        .recognition-page h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .recognition-page p {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .recognition-page ul {
+            font-size: 1.5rem;
+            list-style-type: none;
+            margin: 20px 0;
+            padding: 0;
+        }
+        
+        .recognition-page ul li {
+            margin: 10px 0;
+            padding: 10px 0;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        .image-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .recognition-image {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #ddd;
+        }
+    `;
+            document.head.appendChild(style);
+        });
+
+        document.getElementById('work').addEventListener('click', function(event) {
+            event.preventDefault();
+
+            document.querySelector('.logo').innerHTML = originalLogoText;
+            document.querySelector('main').innerHTML = originalContent;
+        });
+    </script>
+
+
+
+
+</body>
+
+</html>
